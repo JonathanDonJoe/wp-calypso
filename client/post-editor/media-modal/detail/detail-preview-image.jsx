@@ -11,7 +11,7 @@ import classNames from 'classnames';
  * Internal dependencies
  */
 import Spinner from 'components/spinner';
-import MediaImage from 'my-sites/media-library/media-image';
+import MediaImage from 'client/my-sites/media-library/media-file';
 import { url, isItemBeingUploaded } from 'lib/media/utils';
 
 export default class EditorMediaModalDetailPreviewImage extends Component {

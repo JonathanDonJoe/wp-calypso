@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  */
 import { url as mediaUrl } from 'lib/media/utils';
 import MediaLibraryListItemFileDetails from './list-item-file-details';
-import MediaImage from './media-image';
+import MediaImage from './media-file';
 import { MEDIA_IMAGE_THUMBNAIL, SCALE_CHOICES } from 'lib/media/constants';
 
 export default class MediaLibraryListItemImage extends React.Component {
