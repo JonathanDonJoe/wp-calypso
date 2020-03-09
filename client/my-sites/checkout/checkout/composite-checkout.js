@@ -288,8 +288,8 @@ export default function CompositeCheckout( {
 		registerStore,
 		recordEvent,
 		areDomainsInLineItems( items )
-			? domainManagedContactDetails( cachedDomainContactDetails )
-			: taxManagedContactDetails( cachedDomainContactDetails ),
+			? domainManagedContactDetails( cachedDomainContactDetails ?? {} )
+			: taxManagedContactDetails( cachedDomainContactDetails ?? {} ),
 		updateContactDetailsCache
 	);
 
