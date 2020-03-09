@@ -313,41 +313,54 @@ export type WpcomStoreState = {
 	contactDetails: ManagedContactDetails;
 };
 
-export const domainManagedContactDetails: ManagedContactDetails = {
-	firstName: getInitialManagedValue( { isRequired: true } ),
-	lastName: getInitialManagedValue( { isRequired: true } ),
-	organization: getInitialManagedValue( { isRequired: true } ),
-	email: getInitialManagedValue( { isRequired: true } ),
-	alternateEmail: getInitialManagedValue( { isRequired: true } ),
-	phone: getInitialManagedValue( { isRequired: true } ),
-	phoneNumberCountry: getInitialManagedValue( { isRequired: true } ),
-	address1: getInitialManagedValue( { isRequired: true } ),
-	address2: getInitialManagedValue( { isRequired: true } ),
-	city: getInitialManagedValue( { isRequired: true } ),
-	state: getInitialManagedValue( { isRequired: true } ),
-	postalCode: getInitialManagedValue( { isRequired: true } ),
-	countryCode: getInitialManagedValue( { isRequired: true } ),
-	fax: getInitialManagedValue( { isRequired: true } ),
-	vatId: getInitialManagedValue( { isRequired: true } ),
-};
+export function domainManagedContactDetails( initialDetails ): ManagedContactDetails {
+	return {
+		firstName: getInitialManagedValue( { isRequired: true, value: initialDetails.firstName } ),
+		lastName: getInitialManagedValue( { isRequired: true, value: initialDetails.lastName } ),
+		organization: getInitialManagedValue( {
+			isRequired: true,
+			value: initialDetails.organization,
+		} ),
+		email: getInitialManagedValue( { isRequired: true, value: initialDetails.email } ),
+		alternateEmail: getInitialManagedValue( {
+			isRequired: true,
+			value: initialDetails.alternateEmail,
+		} ),
+		phone: getInitialManagedValue( { isRequired: true, value: initialDetails.phone } ),
+		phoneNumberCountry: getInitialManagedValue( {
+			isRequired: true,
+			value: initialDetails.phoneNumberCountry,
+		} ),
+		address1: getInitialManagedValue( { isRequired: true, value: initialDetails.address1 } ),
+		address2: getInitialManagedValue( { isRequired: true, value: initialDetails.address2 } ),
+		city: getInitialManagedValue( { isRequired: true, value: initialDetails.city } ),
+		state: getInitialManagedValue( { isRequired: true, value: initialDetails.state } ),
+		postalCode: getInitialManagedValue( { isRequired: true, value: initialDetails.postalCode } ),
+		countryCode: getInitialManagedValue( { isRequired: true, value: initialDetails.countryCode } ),
+		fax: getInitialManagedValue( { isRequired: true, value: initialDetails.fax } ),
+		vatId: getInitialManagedValue( { isRequired: true, value: initialDetails.vatId } ),
+	};
+}
 
-export const taxManagedContactDetails: ManagedContactDetails = {
-	firstName: getInitialManagedValue(),
-	lastName: getInitialManagedValue(),
-	organization: getInitialManagedValue(),
-	email: getInitialManagedValue(),
-	alternateEmail: getInitialManagedValue(),
-	phone: getInitialManagedValue(),
-	phoneNumberCountry: getInitialManagedValue(),
-	address1: getInitialManagedValue(),
-	address2: getInitialManagedValue(),
-	city: getInitialManagedValue(),
-	state: getInitialManagedValue(),
-	postalCode: getInitialManagedValue( { isRequired: true } ),
-	countryCode: getInitialManagedValue( { isRequired: true } ),
-	fax: getInitialManagedValue(),
-	vatId: getInitialManagedValue(),
-};
+export function taxManagedContactDetails( initialDetails ): ManagedContactDetails {
+	return {
+		firstName: getInitialManagedValue( { value: initialDetails.firstName } ),
+		lastName: getInitialManagedValue( { value: initialDetails.lastName } ),
+		organization: getInitialManagedValue( { value: initialDetails.organization } ),
+		email: getInitialManagedValue( { value: initialDetails.email } ),
+		alternateEmail: getInitialManagedValue( { value: initialDetails.alternateEmail } ),
+		phone: getInitialManagedValue( { value: initialDetails.phone } ),
+		phoneNumberCountry: getInitialManagedValue( { value: initialDetails.phoneNumberCountry } ),
+		address1: getInitialManagedValue( { value: initialDetails.address1 } ),
+		address2: getInitialManagedValue( { value: initialDetails.address2 } ),
+		city: getInitialManagedValue( { value: initialDetails.city } ),
+		state: getInitialManagedValue( { value: initialDetails.state } ),
+		postalCode: getInitialManagedValue( { isRequired: true, value: initialDetails.postalCode } ),
+		countryCode: getInitialManagedValue( { isRequired: true, value: initialDetails.countryCode } ),
+		fax: getInitialManagedValue( { value: initialDetails.fax } ),
+		vatId: getInitialManagedValue( { value: initialDetails.vatId } ),
+	};
+}
 
 export function getInitialWpcomStoreState(
 	contactDetails: ManagedContactDetails
