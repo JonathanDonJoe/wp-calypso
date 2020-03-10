@@ -289,7 +289,10 @@ export default function CompositeCheckout( {
 		recordEvent,
 		areDomainsInLineItems( items )
 			? domainManagedContactDetails( cachedDomainContactDetails )
-			: taxManagedContactDetails( cachedDomainContactDetails ),
+			: taxManagedContactDetails( {
+					postalCode: cachedDomainContactDetails?.postalCode,
+					countryCode: cachedDomainContactDetails?.countryCode,
+			  } ),
 		updateContactDetailsCache
 	);
 
